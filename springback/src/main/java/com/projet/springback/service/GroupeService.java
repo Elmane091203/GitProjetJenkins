@@ -8,5 +8,6 @@ import java.util.List;
 @Service
 public interface GroupeService {
     public List<Groupe> gener( int nb);
+    public List<List<Groupe>> listDesGroupes();
 
 }

@@ -3,10 +3,7 @@ package com.projet.springback.controller;
 import com.projet.springback.model.Groupe;
 import com.projet.springback.service.GroupeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
@@ -17,5 +14,10 @@ public class GroupeController {
     @PostMapping("/groupe")
     public List<Groupe> genererLesGroupes(@RequestBody String groupe) {
         return groupeService.gener(Integer.parseInt(groupe));
+    }
+
+    @GetMapping("/groupes")
+    public  List<List<Groupe>> listDesGroupes(){
+        return groupeService.listDesGroupes();
     }
 }
